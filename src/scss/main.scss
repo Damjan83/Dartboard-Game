@@ -1,0 +1,16 @@
+@import 'base/normalize';
+@import 'base/config';
+@import 'base/fonts';
+@import 'base/base';
+
+// Components
+@import 'components/_container.scss';
+@import 'components/_score.scss';
+@import 'components/_players.scss';
+@import 'components/_overlay.scss';
+
+body {
+    display: flex;
+    align-items: center;
+    background-color: black;
+}

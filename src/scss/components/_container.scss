@@ -1,0 +1,325 @@
+.dartboard {
+    position: relative;
+}
+
+.container {
+    width: 800px;
+    height: 800px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.container-one,
+.container-two,
+.container-three {
+    width: 800px;
+    height: 800px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    scale: 0.92;
+    top: 0;
+    left: 0;
+}
+
+.container-two {
+    scale: 0.60;
+}
+
+.container-three {
+    scale: 0.52;
+}
+
+.bullseye-green,
+.bullseye-red {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: green;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid black;
+    color: transparent;
+}
+
+.bullseye-red {
+    background-color: red;
+    width: 50px;
+    height: 50px;
+}
+
+.container div {
+    height: 50%;
+    width: 127px;
+    color: transparent;
+    position: absolute;
+    clip-path: polygon(100% 0, 50% 100%, 0 0);
+    transform: translateX(-50%);
+    transform-origin: bottom;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 337px;
+}
+
+.container-one div,
+.container-two div,
+.container-three div {
+    height: 50%;
+    width: 127px;
+    color: transparent;
+    position: absolute;
+    clip-path: polygon(100% 0, 50% 100%, 0 0);
+    transform: translateX(-50%);
+    transform-origin: bottom;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 337px;
+}
+
+.container .one,
+.container-two .one-two {
+    background-color: red;
+    left: 50%;
+}
+
+.container .two,
+.container-two .two-two {
+    background-color: green;
+    transform: rotate(18deg);
+}
+
+.container .three,
+.container-two .three-two {
+    background-color: red;
+    transform: rotate(36deg);
+}
+
+.container .four,
+.container-two .four-two {
+    background-color: green;
+    transform: rotate(54deg);
+}
+
+.container .five,
+.container-two .five-two {
+    background-color: red;
+    transform: rotate(72deg);
+}
+
+.container .six,
+.container-two .six-two {
+    background-color: green;
+    transform: rotate(90deg);
+}
+
+.container .seven,
+.container-two .seven-two {
+    background-color: red;
+    transform: rotate(108deg);
+}
+
+.container .eight,
+.container-two .eight-two {
+    background-color: green;
+    transform: rotate(126deg);
+}
+
+.container .nine,
+.container-two .nine-two {
+    background-color: red;
+    transform: rotate(144deg);
+}
+
+.container .ten,
+.container-two .ten-two {
+    background-color: green;
+    transform: rotate(162deg);
+}
+
+.container .eleven,
+.container-two .eleven-two {
+    background-color: red;
+    transform: rotate(180deg);
+}
+
+.container .twelve,
+.container-two .twelve-two {
+    background-color: green;
+    transform: rotate(198deg);
+}
+
+.container .thirteen,
+.container-two .thirteen-two {
+    background-color: red;
+    transform: rotate(216deg);
+}
+
+.container .fourteen,
+.container-two .fourteen-two {
+    background-color: green;
+    transform: rotate(234deg);
+}
+
+.container .fifteen,
+.container-two .fifteen-two {
+    background-color: red;
+    transform: rotate(252deg);
+}
+
+.container .sixteen,
+.container-two .sixteen-two {
+    background-color: green;
+    transform: rotate(270deg);
+}
+
+.container .seventeen,
+.container-two .seventeen-two {
+    background-color: red;
+    transform: rotate(288deg);
+}
+
+.container .eighteen,
+.container-two .eighteen-two {
+    background-color: green;
+    transform: rotate(306deg);
+}
+
+.container .nineteen,
+.container-two .nineteen-two {
+    background-color: red;
+    transform: rotate(324deg);
+}
+
+.container .twenty,
+.container-two .twenty-two {
+    background-color: green;
+    transform: rotate(342deg);
+}
+
+/*Container one*/
+
+.container-one .one-one,
+.container-three .one-three {
+    background-color: black;
+    left: 50%;
+}
+
+.container-one .two-one,
+.container-three .two-three {
+    background-color: white;
+    transform: rotate(18deg);
+}
+
+.container-one .three-one,
+.container-three .three-three {
+    background-color: black;
+    transform: rotate(36deg);
+}
+
+.container-one .four-one,
+.container-three .four-three {
+    background-color: white;
+    transform: rotate(54deg);
+}
+
+.container-one .five-one,
+.container-three .five-three {
+    background-color: black;
+    transform: rotate(72deg);
+}
+
+.container-one .six-one,
+.container-three .six-three {
+    background-color: white;
+    transform: rotate(90deg);
+}
+
+.container-one .seven-one,
+.container-three .seven-three {
+    background-color: black;
+    transform: rotate(108deg);
+}
+
+.container-one .eight-one,
+.container-three .eight-three {
+    background-color: white;
+    transform: rotate(126deg);
+}
+
+.container-one .nine-one,
+.container-three .nine-three {
+    background-color: black;
+    transform: rotate(144deg);
+}
+
+.container-one .ten-one,
+.container-three .ten-three {
+    background-color: white;
+    transform: rotate(162deg);
+}
+
+.container-one .eleven-one,
+.container-three .eleven-three {
+    background-color: black;
+    transform: rotate(180deg);
+}
+
+.container-one .twelve-one,
+.container-three .twelve-three {
+    background-color: white;
+    transform: rotate(198deg);
+}
+
+.container-one .thirteen-one,
+.container-three .thirteen-three {
+    background-color: black;
+    transform: rotate(216deg);
+}
+
+.container-one .fourteen-one,
+.container-three .fourteen-three {
+    background-color: white;
+    transform: rotate(234deg);
+}
+
+.container-one .fifteen-one,
+.container-three .fifteen-three {
+    background-color: black;
+    transform: rotate(252deg);
+}
+
+.container-one .sixteen-one,
+.container-three .sixteen-three {
+    background-color: white;
+    transform: rotate(270deg);
+}
+
+.container-one .seventeen-one,
+.container-three .seventeen-three {
+    background-color: black;
+    transform: rotate(288deg);
+}
+
+.container-one .eighteen-one,
+.container-three .eighteen-three {
+    background-color: white;
+    transform: rotate(306deg);
+}
+
+.container-one .nineteen-one,
+.container-three .nineteen-three {
+    background-color: black;
+    transform: rotate(324deg);
+}
+
+.container-one .twenty-one,
+.container-three .twenty-three {
+    background-color: white;
+    transform: rotate(342deg);
+}
