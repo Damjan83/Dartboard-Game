@@ -1,10 +1,6 @@
 const bullseyeGreen = document.querySelector('.bullseye-green');
 const bullseyeRed = document.querySelector('.bullseye-red');
 const score = document.querySelector('.score');
-// const playerOne = document.querySelector('.player-one');
-// const playerTwo = document.querySelector('.player-two');
-// const playerThree = document.querySelector('.player-tree');
-// const playerFour = document.querySelector('.player-four');
 const playerOneScore = document.querySelector('.pl-score-one');
 const playerTwoScore = document.querySelector('.pl-score-two');
 const playerThreeScore = document.querySelector('.pl-score-three');
@@ -64,33 +60,37 @@ player.forEach(el => {
     })
 })
 
+function clickCheck() {
+    if(click == 3) {
+        let currentPlayer = document.querySelector('.player.is-active');
+        let currentPlayerScore;
+
+        for(let i = 0; i < scorePlayers.length; i++) {
+            if(scorePlayers[i].classList.contains(currentPlayer.id)) {
+                currentPlayerScore = scorePlayers[i];
+            }
+        }
+
+        currentPlayerScore.textContent = scoreValue;
+        playerScore.push({ id: currentPlayer.id, score: scoreValue });
+        scoreValue = 0;
+        score.innerHTML = 0;
+        click = 0;
+        currentPlayer.classList.remove('is-active');
+        currentPlayer.nextElementSibling.classList.add('is-active');
+    }
+}
+
+
 cont.forEach(el => {
     el.addEventListener('click', function () {
         click += 1;
-        if (click > 3) return;
-    
+        if (click > 3) return;   
         scoreValue += parseInt(el.innerHTML) * 2;
         score.innerHTML = scoreValue;
         localStorage.setItem(score, scoreValue)
 
-        if(click == 3) {
-            let currentPlayer = document.querySelector('.player.is-active');
-            let currentPlayerScore;
-
-            for(let i = 0; i < scorePlayers.length; i++) {
-                if(scorePlayers[i].classList.contains(currentPlayer.id)) {
-                    currentPlayerScore = scorePlayers[i];
-                }
-            }
-
-            currentPlayerScore.textContent = scoreValue;
-            playerScore.push({ id: currentPlayer.id, score: scoreValue });
-            scoreValue = 0;
-            score.innerHTML = 0;
-            click = 0;
-            currentPlayer.classList.remove('is-active');
-            currentPlayer.nextElementSibling.classList.add('is-active');
-        }
+        clickCheck();
     })
 })
 
@@ -101,6 +101,8 @@ contOne.forEach(el => {
         scoreValue += parseInt(el.innerHTML);
         score.innerHTML = scoreValue;
         localStorage.setItem(score, scoreValue);
+
+        clickCheck();
     })
 })
 
@@ -111,6 +113,8 @@ contTwo.forEach(el => {
         scoreValue += parseInt(el.innerHTML) * 3
         score.innerHTML = scoreValue;
         localStorage.setItem(score, scoreValue);
+
+        clickCheck();
     })
 })
 
@@ -121,6 +125,8 @@ contThree.forEach(el => {
         scoreValue += parseInt(el.innerHTML);
         score.innerHTML = scoreValue;
         localStorage.setItem(score, scoreValue);
+
+        clickCheck();
     })
 })
 
@@ -130,6 +136,8 @@ bullseyeGreen.addEventListener('click', function () {
     scoreValue += parseInt(bullseyeGreen.innerHTML);
     score.innerHTML = scoreValue;
     localStorage.setItem(score, scoreValue)
+
+    clickCheck();
 })
 
 bullseyeRed.addEventListener('click', function () {
@@ -138,7 +146,7 @@ bullseyeRed.addEventListener('click', function () {
     scoreValue += parseInt(bullseyeRed.innerHTML);
     score.innerHTML = scoreValue;
     localStorage.setItem(score, scoreValue)
+
+    clickCheck();
 })
-
-
 
