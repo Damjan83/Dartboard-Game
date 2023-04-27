@@ -17,6 +17,7 @@ const scorePlayers = document.querySelectorAll('.pl-score');
 const typeGame501 = document.getElementById('tg-five');
 const typeGame301 = document.getElementById('tg-three');
 const gameType = document.querySelectorAll('.game-type');
+const numPlayer = document.querySelectorAll('.num-player');
 
 score.innerHTML = 0;
 let click = 0;
@@ -24,6 +25,11 @@ let scoreValue = 0;
 let playerScore = [];
 let lastPlayer = player[player.length - 1];
 
+numPlayer.forEach(el => {
+    el.addEventListener('click' , function(){
+        el.classList.add('is-active');
+    })
+});
 
 gameType.forEach(el => {
     el.addEventListener('click', function () {
@@ -43,10 +49,15 @@ gameType.forEach(el => {
             console.log('test')
         }
     })
-})
+});
 
 playBtn.addEventListener('click', function () {
-    startCont.style.display = 'none';
+    
+    if (typeGame501.classList.contains('is-active')) {
+        startCont.style.display = 'none'
+    }else{
+        alert('Please choose a game type!');
+    }
 });
 
 // player.forEach(el => {
@@ -79,9 +90,8 @@ playBtn.addEventListener('click', function () {
 //     })
 // })
 
-
 function clickCheck() {
-    if (click == 3) {
+    if (click > 1 && click < 3) {
         let currentPlayer = document.querySelector('.player.is-active');
         let currentPlayerScore;
 
@@ -93,6 +103,8 @@ function clickCheck() {
         currentPlayerScore.textContent = currentPlayerScore.textContent - scoreValue;       
         playerScore.push({ id: currentPlayer.id, score: scoreValue });
         click = 0;
+        score.innerHTML = 0;
+        scoreValue = 0;
 
         if (lastPlayer == currentPlayer) {
             currentPlayer.classList.remove('is-active'); 
@@ -101,8 +113,12 @@ function clickCheck() {
             currentPlayer.classList.remove('is-active');   
             currentPlayer.nextElementSibling.classList.add('is-active');
         }
+
+        if (currentPlayerScore.textContent == 0) {
+            console.log('kraj')
+        }
     }
-}
+};
 
 cont.forEach(el => {
     el.addEventListener('click', function () {
@@ -114,7 +130,7 @@ cont.forEach(el => {
 
         clickCheck();
     })
-})
+});
 
 contOne.forEach(el => {
     el.addEventListener('click', function () {
@@ -126,7 +142,7 @@ contOne.forEach(el => {
 
         clickCheck();
     })
-})
+});
 
 contTwo.forEach(el => {
     el.addEventListener('click', function () {
@@ -138,7 +154,7 @@ contTwo.forEach(el => {
 
         clickCheck();
     })
-})
+});
 
 contThree.forEach(el => {
     el.addEventListener('click', function () {
@@ -150,7 +166,7 @@ contThree.forEach(el => {
 
         clickCheck();
     })
-})
+});
 
 bullseyeGreen.addEventListener('click', function () {
     click += 1;
@@ -160,7 +176,7 @@ bullseyeGreen.addEventListener('click', function () {
     localStorage.setItem(score, scoreValue)
 
     clickCheck();
-})
+});
 
 bullseyeRed.addEventListener('click', function () {
     click += 1;
@@ -170,5 +186,5 @@ bullseyeRed.addEventListener('click', function () {
     localStorage.setItem(score, scoreValue)
 
     clickCheck();
-})
+});
 

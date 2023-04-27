@@ -18,6 +18,11 @@
     justify-content: center;
 }
 
+.start__container-text {
+    font-size: 20px;
+    font-weight: 700;
+}
+
 .start__container-title, .start__container-text, .start__container-subtitle {
     color: white;
 }
@@ -34,7 +39,10 @@
     justify-content: center;
 }
 
-.type-of-game__501, .type-of-game__301, .type-of-game__cricket {
+.type-of-game__501, 
+.type-of-game__301, 
+.type-of-game__cricket,
+.num-one, .num-two, .num-three, .num-four {
     border: 1px solid white;
     border-radius: 5px;
     padding: 10px;
@@ -49,6 +57,20 @@
     }
 }
 
+.num-one, .num-two, .num-three, .num-four {
+    margin-right: 10px;
+}
+
+.num-four {
+    margin-right: 0;
+}
+
+.number-of-player {
+    display: flex;
+    align-items: center;
+}
+
 .type-of-game__301 {
     margin: 0 20px;
 }
+
