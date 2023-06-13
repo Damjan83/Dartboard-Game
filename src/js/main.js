@@ -91,7 +91,7 @@ playBtn.addEventListener('click', function () {
 // })
 
 function clickCheck() {
-    if (click > 1 && click < 3) {
+    if (click == 3) {
         let currentPlayer = document.querySelector('.player.is-active');
         let currentPlayerScore;
 
